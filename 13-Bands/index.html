@@ -9,11 +9,11 @@
 <body>
   <h1>Music Taste</h1>
   <script>
-  const bands = ["Tool", "Beck", "Beethoven", "Operation Ivy"];
+  const bands = ["tool", "beck", "beethoven", "operation ivy"];
 
   const userBand = prompt("What's your favorite band?");
 
-  if (bands.indexOf(userBand) > -1) {
+  if (bands.indexOf(userBand.toLowerCase()) > -1) {
     alert("YEAH I LOVE THEM")
   } else {
     alert("They're not one of my favorites...")
