@@ -10,7 +10,7 @@
 <body>
 
   <div id="game">
-    <h1>Press r, p, or s to start a game of Rock,Paper, Scissors!</h1>
+    <h1>Press r, p, or s to start a game of Rock, Paper, Scissors!</h1>
   </div>
 
   <script type="text/javascript">
@@ -18,7 +18,7 @@
     // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
 
     var computerChoices = ["r", "p", "s"];
-    
+
     // Below may be used for simpler logic in the future
     const userChoices = ["r", "p", "s"];
 
@@ -33,7 +33,6 @@
         alert("please select r, p, or s")
       }
 
-
       // Randomly chooses a choice from the options array. This is the Computer's guess.
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
@@ -44,8 +43,7 @@
       alert("Computer guess: " + computerGuess);
 
       if (userGuess === computerGuess) {
-        alert("It's a tie");
-
+        document.querySelector("h1").innerHTML = "It's a tie, press r, p, or s to play again";
       } else {
         let win = true;
         switch (userGuess) {
@@ -65,10 +63,10 @@
             };
             break;
         }
-        (win) ? alert("You Win!") : alert("You Lose!");
+        (win) ? document.querySelector("h1").innerHTML = "You Win! Press r, p, or s to play again" : document.querySelector("h1").innerHTML = "You Lose! Press r, p, or s to play again";
       }
-      // alert("Hit ok, then press r, p, or s to play again!");
     };
+    
   </script>
 
 </body>
