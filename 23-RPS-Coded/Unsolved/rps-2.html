@@ -10,19 +10,29 @@
 <body>
 
   <div id="game">
-
+    <h1>Press r, p, or s to start a game of Rock,Paper, Scissors!</h1>
   </div>
 
   <script type="text/javascript">
 
     // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+
     var computerChoices = ["r", "p", "s"];
+    
+    // Below may be used for simpler logic in the future
+    const userChoices = ["r", "p", "s"];
 
     // This function is run whenever the user presses a key.
-    document.onkeyup = function(event) {
+    document.onkeyup = function (event) {
 
       // Determines which key was pressed.
       var userGuess = event.key;
+      for (let i = 0; i < userChoices.length; i++) {
+        if (userGuess !== userChoices[i]);
+        break;
+        alert("please select r, p, or s")
+      }
+
 
       // Randomly chooses a choice from the options array. This is the Computer's guess.
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -33,6 +43,31 @@
       // Alerts the Computer's guess.
       alert("Computer guess: " + computerGuess);
 
+      if (userGuess === computerGuess) {
+        alert("It's a tie");
+
+      } else {
+        let win = true;
+        switch (userGuess) {
+          case "r":
+            if (computerGuess === "p") {
+              win = false;
+            };
+            break;
+          case "p":
+            if (computerGuess === "s") {
+              win = false;
+            };
+            break;
+          case "s":
+            if (computerGuess === "r") {
+              win = false;
+            };
+            break;
+        }
+        (win) ? alert("You Win!") : alert("You Lose!");
+      }
+      // alert("Hit ok, then press r, p, or s to play again!");
     };
   </script>
 
