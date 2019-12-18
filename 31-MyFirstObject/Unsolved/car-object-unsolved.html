@@ -58,18 +58,37 @@
       console.log(car.mileage);
     }
 
+    // document.onkeyup = (event) => {
+    //   let userGuess = event.key;
+    //   if (userGuess === "w") {
+    //     car.driveToWork();
+    //   } else if (userGuess === "a") {
+    //     car.driveAroundWorld();
+    //   } else if (userGuess === "t") {
+    //     car.getTuneUp();
+    //   } else if (userGuess === "h") {
+    //     car.honk();
+    //   }
+    //   rewriteStats()
+    // }
+
     document.onkeyup = (event) => {
-      let userGuess = event.key;
-      if (userGuess === "w") {
+      let userGuess = event.key.toLowerCase();
+      switch(userGuess) {
+        case "w":
         car.driveToWork();
-      } else if (userGuess === "a") {
+        break;
+        case "a":
         car.driveAroundWorld();
-      } else if (userGuess === "t") {
+        break;
+        case "t":
         car.getTuneUp();
-      } else if (userGuess === "h") {
+        break;
+        case "h":
         car.honk();
+        break;
       }
-      rewriteStats()
+      rewriteStats();
     }
 
   </script>
