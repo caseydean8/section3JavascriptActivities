@@ -10,6 +10,7 @@
   <h1>Press w to drive to work</h1>
   <h1>Press a to drive around the world</h1>
   <h1>Press t to get a tune up</h1>
+  <h1>Press h to honk</h1>
 
   <script>
 
@@ -65,6 +66,8 @@
         car.driveAroundWorld();
       } else if (userGuess === "t") {
         car.getTuneUp();
+      } else if (userGuess === "h") {
+        car.honk();
       }
       rewriteStats()
     }
