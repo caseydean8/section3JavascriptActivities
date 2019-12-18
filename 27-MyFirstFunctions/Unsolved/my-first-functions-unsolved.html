@@ -68,29 +68,79 @@
     // Call the isString function here.
     const isString = (x, y, z) => {
       (typeof x === "string" && typeof y === "string" && typeof z === "string") ?
-        console.log("These are all strings") : console.log("Not all Strings")
+        console.log("These are all strings") : console.log("These are NOT all Strings")
     }
 
     isString("1", "2", "3");
+    isString(2, 3, 7);
 
     console.log("-------------------");
 
 
     // Call the vowelChecker function here.
+    const vowelChecker = (x) => {
+      const firstChar = x.toLowerCase().charAt(0);
+      (firstChar === "a" || firstChar === "e" || firstChar === "i" || firstChar === "o" || firstChar === "u") ? console.log(`${firstChar} is a vowel`) : console.log(`${firstChar} is not a vowel`);
+    }
 
+    vowelChecker("zoo");
+    vowelChecker("eel");
+
+    console.log("-------------------");
+    // This one doesn't work, probaby needs a "while"
+    const vowelCheckerTwo = (x) => {
+      const vowels = ["a", "e", "i", "o", "u"];
+      for (let i = 0; i < vowels.length; i++) {
+        if (x === vowels[i]) {
+          console.log(`${x} is a vowel`);
+          break;
+        } else {
+          console.log(`${x} is not a vowel`)
+        }
+      };
+    };
+
+
+    vowelCheckerTwo("i");
 
     console.log("-------------------");
 
 
     // BONUS
     // Call the adderReturn function here and set it equal to a variable. Then log that variable to the console.
+    let sum;
+    const adderReturn = (x, y, z) => {
+      sum = x + y + z;
+      console.log(sum);
+    }
 
+    adderReturn(4, 5, 6);
+
+    const adderReturnTwo = (x, y, z) => {
+      return x + y + z;
+    }
+
+    const sumTwo = adderReturnTwo(6, 7, 8);
+    console.log(sumTwo);
 
     console.log("-------------------");
 
 
-      // Call the multiplierReturn function here and set it equal to a variable. Then log that variable to the console.
+    // Call the multiplierReturn function here and set it equal to a variable. Then log that variable to the console.
+    let product;
+    const multiplierReturn = (x, y, z) => {
+      product = x * y * z;
+      console.log(product);
+    }
 
+    multiplierReturn(4, 5, 6);
+
+    const multiplierReturnTwo = (x, y, z) => {
+      return x * y * z;
+    }
+
+    const productTwo = multiplierReturnTwo(8, 9, 10);
+    console.log(productTwo);
   </script>
 
 </body>
