@@ -20,11 +20,18 @@
       console.log("I love " + vegetables[i]);
     }
 
+    // Map is not what I want...
     const veggieMapped = vegetables.map(i => "I love " + i);
 
     for (let i = 0; i < veggieMapped.length; i++) {
       console.log(veggieMapped[i]);
     }
+
+    // forEach is the basic loop higher order function
+    vegetables.forEach(vegetable => console.log(`I love ${vegetable}`));
+  
+    // Same as above
+    vegetables.forEach(i => console.log(`I love ${i}`));
 
   </script>
 

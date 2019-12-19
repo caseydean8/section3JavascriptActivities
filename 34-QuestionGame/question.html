@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Q&A</title>
+</head>
+
+<body>
+  <h1>Press any key to begin quiz</h1>
+  <script>
+    array = [{ q: "two or more conditions can be added using && and ||:", a: "t" }, { q: "We can find errors in code only when we test the program:", a: "f" }, { q: "Prompt, parseInt and document.write are keywords we use to function something in javascript", a: "t"}, {q: ">= stands for not equal to", a: "f"}, {q: "An error in code is known as a bug", a: "t"}, {q: "% is a valid mathematical operator", a: "t"}, {q: "5Price is a valid variable name in javascript", a: "f"}, {q: "javascript must be in the< body > tag to work", a: "t"}, {q: "document.write(sum=a+b ) is a valid javascript statement.", a: "f"}, {q: "An if statement must have an else clause attached", a: "f"}];
+
+    document.onkeyup = (event) => {
+      array.forEach(element => {
+        confirm(element.q)
+      });
+    }
+
+    // confirm(array[0].q);
+
+    
+
+  </script>
+</body>
+
+</html>
