@@ -27,40 +27,40 @@
 
     // confirm(array[0].q);
 
-      let score = 0;
-      let question = 0;
-      const questionAsk = () => {
-        document.querySelector(".question").innerHTML = array[question].q;
-        document.querySelector(".press").innerHTML = "Press t for true or f for false";
-        document.onkeyup = (event) => {
-          const userKey = event.key;
-          console.log(userKey);
-          switch (userKey) {
-            case "t":
-              if (array[question].a === "t") {
-                score ++;                question ++;
-              } else {
-                question ++
-              }
-              break;
-
-            case "f":
-            if (array[question].a === "f") {
-              score ++;
-              question ++
+    let score = 0;
+    let question = 0;
+    const questionAsk = () => {
+      document.querySelector(".question").innerHTML = array[question].q;
+      document.querySelector(".press").innerHTML = "Press t for true or f for false";
+      document.onkeyup = (event) => {
+        const userKey = event.key;
+        console.log(userKey);
+        switch (userKey) {
+          case "t":
+            if (array[question].a === "t") {
+              score++; question++;
             } else {
-              question ++
+              question++
             }
-              break;
+            break;
 
-            default:
+          case "f":
+            if (array[question].a === "f") {
+              score++;
+              question++
+            } else {
+              question++
+            }
+            break;
+
+          default:
             alert("Please choose t or f");
-
-          }
         }
+        questionAsk();
       }
-      questionAsk();
-    
+    }
+    questionAsk();
+
 
 
 
