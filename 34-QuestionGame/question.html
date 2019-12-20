@@ -9,19 +9,61 @@
 </head>
 
 <body>
-  <h1>Press any key to begin quiz</h1>
+  <div style="text-align: center;">
+    <h1>True or false?</h1>
+    <div class="question"></div>
+    <div class="press"></div>
+    <div class="answer"></div>
+  </div>
   <script>
-    array = [{ q: "two or more conditions can be added using && and ||:", a: "t" }, { q: "We can find errors in code only when we test the program:", a: "f" }, { q: "Prompt, parseInt and document.write are keywords we use to function something in javascript", a: "t"}, {q: ">= stands for not equal to", a: "f"}, {q: "An error in code is known as a bug", a: "t"}, {q: "% is a valid mathematical operator", a: "t"}, {q: "5Price is a valid variable name in javascript", a: "f"}, {q: "javascript must be in the< body > tag to work", a: "t"}, {q: "document.write(sum=a+b ) is a valid javascript statement.", a: "f"}, {q: "An if statement must have an else clause attached", a: "f"}];
+    array = [{ q: "two or more conditions can be added using && and ||:", a: "t" }, { q: "We can find errors in code only when we test the program:", a: "f" }, { q: "Prompt, parseInt and document.write are keywords we use to function something in javascript", a: "t" }, { q: ">= stands for not equal to", a: "f" }, { q: "An error in code is known as a bug", a: "t" }, { q: "% is a valid mathematical operator", a: "t" }, { q: "5Price is a valid variable name in javascript", a: "f" }, { q: "javascript must be in the< body > tag to work", a: "t" }, { q: "document.write(sum=a+b ) is a valid javascript statement.", a: "f" }, { q: "An if statement must have an else clause attached", a: "f" }];
 
-    document.onkeyup = (event) => {
-      array.forEach(element => {
-        confirm(element.q)
-      });
-    }
+
+    // document.onkeyup = (event) => {
+    //   array.forEach(element => {
+    //     confirm(element.q);
+    //   });
+    // }
 
     // confirm(array[0].q);
 
+      let score = 0;
+      let question = 0;
+      const questionAsk = () => {
+        document.querySelector(".question").innerHTML = array[question].q;
+        document.querySelector(".press").innerHTML = "Press t for true or f for false";
+        document.onkeyup = (event) => {
+          const userKey = event.key;
+          console.log(userKey);
+          switch (userKey) {
+            case "t":
+              if (array[question].a === "t") {
+                score ++;                question ++;
+              } else {
+                question ++
+              }
+              break;
+
+            case "f":
+            if (array[question].a === "f") {
+              score ++;
+              question ++
+            } else {
+              question ++
+            }
+              break;
+
+            default:
+            alert("Please choose t or f");
+
+          }
+        }
+      }
+      questionAsk();
     
+
+
+
 
   </script>
 </body>
